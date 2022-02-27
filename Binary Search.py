@@ -1,21 +1,22 @@
-list=[2,5,9,11,16,21,25]
 pos=-1
-n=25
-def binary_search(list,n):
-    l=0
-    u=len(list)-1
+list=[2,6,8,12,15,21,25,30,33]
+def binarysearch(list,n):
+
+    f=0
+    l=len(list)-1
+    mid=(f+l)//2
     for i in range(len(list)):
-        mid = (l + u) // 2
-        if list[mid]==n:
-            globals()['pos']=mid
+        if n==list[mid]:
+            globals()['pos'] = mid
             return True
         else:
-            if list[mid]<n:
-                l=mid+1
+            if n>mid:
+                f=mid+1
             else:
-                u=mid-1
+                l=mid-1
     return False
-if binary_search(list,n):
-    print("found at",pos)
+
+if binarysearch(list,2):
+    print("found at ",pos)
 else:
-    print("not found")
+    print("element not found")

@@ -1,10 +1,17 @@
-def genetators():
-    i=10
-    while i>=1:
-        yield i
-        i-=1
+n = int(input("enter the number : "))
 
-val=genetators()
+results = []
 
-for i in val:
-    print(i)
+for i in range(1, n+1):
+    decimal = str(i)
+    octal = str(oct(i)[2:])
+    hex_ = str(hex(i)[2:]).upper()
+    binary = str(bin(i)[2:])
+
+    results.append([decimal, octal, hex_, binary])
+
+width = len(results[-1][3])  # largest binary number
+print(results[-1][3])
+print(len(results[-1][3]))
+for i in results:
+    print(*(rep.rjust(width) for rep in i))
