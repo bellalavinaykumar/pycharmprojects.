@@ -1,17 +1,12 @@
-n = int(input("enter the number : "))
+list=[1,1,2,3,3,4,5,5]
 
-results = []
+def remove_dupicates(list):
+    i=0
+    for j in range(0,len(list)-1):
+        if list[i]!=list[j+1]:
+            i+=1
+            list[i]=list[j+1]
 
-for i in range(1, n+1):
-    decimal = str(i)
-    octal = str(oct(i)[2:])
-    hex_ = str(hex(i)[2:]).upper()
-    binary = str(bin(i)[2:])
 
-    results.append([decimal, octal, hex_, binary])
-
-width = len(results[-1][3])  # largest binary number
-print(results[-1][3])
-print(len(results[-1][3]))
-for i in results:
-    print(*(rep.rjust(width) for rep in i))
+remove_dupicates(list)
+print(list)
